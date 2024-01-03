@@ -1,0 +1,26 @@
+{
+  "name": "node-template-1.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./src/test",
+    "start": "PORT=4000 node ./src/app.js",
+    "build": "npm run-script build",
+    "sonar": "sonar-scanner"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "supertest": "^6.0.1",
+    "sonarqube-scanner": "^2.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "sonarqube-scanner": "~2.6.0"
+  }
+}
