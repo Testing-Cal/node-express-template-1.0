@@ -5,9 +5,11 @@ const http = require('http');
 const httpServer = http.createServer(app);
 const router = express.Router();
 
+app.set('view engine', 'ejs');
+
 app.use(bodyparser.urlencoded({extended:false}));
 router.get('/', function(req, res) {
-  res.send('Hello, Welcome to Engineering Lab! Start editing to see some magic happen :)');
+  res.render('index', { title: 'Node.js with Express' });
 });
 
 app.use(process.env.context || "/", router);
