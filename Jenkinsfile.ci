@@ -145,7 +145,7 @@ pipeline {
                         if ("${list[i]}" == "'UnitTests'") {
                             stage('Unit Tests') {
                                 sh """
-                                docker run --rm --user root -v "$WORKSPACE":/opt/repo -w /opt/repo $NODE_IMAGE /bin/bash -c "cd /opt/repo &&  npm install && npm test -- --coverage --watchAll=false"
+                                docker run --rm --user root -v "$WORKSPACE":/opt/repo -w /opt/repo $NODE_IMAGE /bin/bash -c "cd /opt/repo &&  npm install && npm run test -- --coverage --watchAll=false"
                                 sudo chown -R `id -u`:`id -g` "$WORKSPACE"
                                 """
                             }
