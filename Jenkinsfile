@@ -474,6 +474,7 @@ pipeline {
                                         }
 
                                         sh 'ssh -o "StrictHostKeyChecking=no" ciuser@$DOCKERHOST "sleep 5s"'
+                                        sh 'ssh -o "StrictHostKeyChecking=no" ciuser@$DOCKERHOST "docker image prune -a -f"'
                                         sh 'ssh -o "StrictHostKeyChecking=no" ciuser@$DOCKERHOST "docker pull "$REGISTRY_URL:$BUILD_TAG""'
                                         sh """ssh -o "StrictHostKeyChecking=no" ciuser@$DOCKERHOST "docker stop "${generalPresent.repoName}" || true && docker rm "${generalPresent.repoName}" || true" """
                                             // Read Docker Vault properties
